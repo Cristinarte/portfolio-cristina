@@ -1,0 +1,8 @@
+.footer { border-top: 1px solid var(--line); padding-top: clamp(48px, 7vw, 88px); }
+.grid { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; }
+.name { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 300; }
+.role { color: var(--muted); margin-top: 4px; }
+.links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.links a { color: var(--muted); font-size: 0.92rem; transition: color 0.3s var(--ease); }
+.links a:hover { color: var(--accent); }
+.copy { margin-top: clamp(40px, 6vw, 72px); padding-block: 24px; border-top: 1px solid var(--line); font-size: 0.78rem; color: var(--muted); max-width: none; }

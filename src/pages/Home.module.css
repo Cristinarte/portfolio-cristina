@@ -1,0 +1,3 @@
+.about { padding-block: clamp(56px, 9vw, 112px); border-top: 1px solid var(--line); }
+.inner { display: flex; flex-direction: column; gap: 20px; }
+.text { font-family: var(--font-serif); font-weight: 300; font-size: clamp(1.15rem, 2.2vw, 1.6rem); line-height: 1.5; max-width: 40em; }

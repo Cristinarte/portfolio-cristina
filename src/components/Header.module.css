@@ -1,0 +1,58 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--header-h);
+  background: rgba(8, 8, 8, 0.8);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.inner { height: 100%; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-family: var(--font-serif); font-size: 1.4rem; letter-spacing: 0.02em; }
+.logo span { color: var(--accent); }
+.nav { display: flex; gap: clamp(16px, 2.4vw, 36px); }
+.nav a {
+  position: relative;
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding: 6px 0;
+  transition: color 0.3s var(--ease);
+}
+.nav a::after {
+  content: '';
+  position: absolute; left: 0; bottom: 0;
+  width: 100%; height: 1px;
+  background: var(--accent);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.3s var(--ease);
+}
+.nav a:hover { color: var(--text); }
+.nav a:hover::after,
+.nav a.active::after { transform: scaleX(1); }
+.nav a.active { color: var(--text); }
+
+.toggle { display: none; background: none; border: 0; width: 40px; height: 40px; position: relative; }
+.toggle span {
+  position: absolute; left: 10px; right: 10px; height: 1px; background: var(--text);
+  transition: transform 0.3s var(--ease);
+}
+.toggle span:first-child { top: 16px; }
+.toggle span:last-child { top: 24px; }
+.toggle[aria-expanded='true'] span:first-child { transform: translateY(4px) rotate(45deg); }
+.toggle[aria-expanded='true'] span:last-child { transform: translateY(-4px) rotate(-45deg); }
+
+@media (max-width: 860px) {
+  .toggle { display: block; }
+  .nav {
+    position: absolute; top: var(--header-h); left: 0; right: 0;
+    flex-direction: column; gap: 0;
+    padding: 12px var(--gutter) 24px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    opacity: 0; visibility: hidden; transform: translateY(-8px);
+    transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), visibility 0.3s;
+  }
+  .nav.open { opacity: 1; visibility: visible; transform: none; }
+  .nav a { padding: 14px 0; font-size: 1rem; border-bottom: 1px solid var(--line); }
+  .nav a::after { display: none; }
+}

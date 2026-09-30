@@ -1,0 +1,7 @@
+.section { padding-block: clamp(56px, 9vw, 112px); border-top: 1px solid var(--line); }
+.head { display: flex; flex-direction: column; gap: 12px; margin-bottom: clamp(32px, 5vw, 56px); max-width: 60ch; }
+.title { font-family: var(--font-serif); font-weight: 300; font-size: clamp(2rem, 4.5vw, 3.2rem); line-height: 1.1; letter-spacing: -0.01em; }
+.desc { color: var(--muted); }
+.grid > * { display: flex; }
+.grid > * > * { flex: 1; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 20px; }

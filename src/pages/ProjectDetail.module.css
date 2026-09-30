@@ -1,0 +1,30 @@
+.page { padding-block: clamp(32px, 6vw, 72px) clamp(56px, 9vw, 112px); }
+.back { display: inline-block; font-size: 0.85rem; color: var(--muted); transition: color 0.3s var(--ease); }
+.back:hover { color: var(--accent); }
+.head { display: flex; flex-direction: column; gap: 12px; margin-block: 32px; }
+.title { font-family: var(--font-serif); font-weight: 300; font-size: clamp(2.4rem, 6vw, 4.5rem); line-height: 1.05; letter-spacing: -0.02em; }
+.hero { display: flex; justify-content: center; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); background: var(--panel); }
+.hero video { width: 100%; height: auto; max-height: 80vh; background: #000; }
+.hero img { width: auto; max-width: 100%; height: auto; max-height: 80vh; object-fit: contain; }
+.info { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: clamp(24px, 4vw, 64px); margin-block: clamp(40px, 6vw, 80px); }
+.label { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); font-weight: 400; margin-bottom: 14px; }
+.text { color: var(--muted); }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.tags li { font-size: 0.78rem; padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px; color: var(--text); }
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 20px; }
+.figure { margin: 0; display: flex; flex-direction: column; gap: 14px; }
+.shot { aspect-ratio: 4 / 3; border-radius: var(--radius); border: 1px solid var(--line); overflow: hidden; background: var(--panel); }
+.shot img { width: 100%; height: 100%; object-fit: cover; }
+.shotContain img { object-fit: contain; }
+.figure figcaption { display: flex; flex-direction: column; gap: 4px; }
+.figure figcaption strong { font-family: var(--font-serif); font-weight: 400; font-size: 1.15rem; }
+.figure figcaption span { color: var(--muted); font-size: 0.9rem; }
+.text + .text { margin-top: 12px; }
+.actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: clamp(40px, 6vw, 72px); }
+
+@media (max-width: 860px) {
+  .info { grid-template-columns: 1fr; }
+}
+
+@keyframes pageIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.page { animation: pageIn 0.7s var(--ease) both; }

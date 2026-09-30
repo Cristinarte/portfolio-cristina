@@ -1,0 +1,1 @@
+.bar { position: absolute; left: 0; bottom: -1px; height: 1px; width: 100%; background: var(--accent); transform-origin: left; transform: scaleX(0); box-shadow: 0 0 10px rgba(183, 230, 0, 0.6); }
